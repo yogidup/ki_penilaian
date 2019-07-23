@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'patty',
-	'password' => '1031031y',
-	'database' => 'db_ki_penilaian',
+	'hostname' => '213.190.4.80',
+	'username' => 'admin_ki_p',
+	'password' => 'kamehameha',
+	'database' => 'admin_ki_p',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
