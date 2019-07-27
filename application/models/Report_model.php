@@ -97,6 +97,34 @@ class Report_model extends CI_Model {
 		return $query;
 	}
 	
+	public function chart_select_where($condition = NULL, $option = NULL)
+	{
+		$this->db->select('
+			DATE_FORMAT(report.evaluation_period, "%b %Y") as evaluation_period,
+			(
+				select
+					round(sum(b.weight * a.score), 2)
+				from evaluation a
+					left join aspect b on b.id = a.aspect_id
+				where 1
+					and a.report_id = report.id
+			) as total_score
+		');
+		if($condition !== NULL)
+		{
+			$this->db->where($condition);
+		}
+		$this->db->from('report');
+		$this->db->join('user as evaluator', 'evaluator.id = report.evaluator_id', 'left');
+		$this->db->join('user as employe', 'employe.id = report.employe_id', 'left');
+		$this->db->join('user as approved_by', 'approved_by.id = report.approved_by', 'left');
+		$this->db->order_by('report.evaluation_period', 'ASC');
+		$this->db->limit($option['offset'], $option['limit']);
+		$query = $this->db->get();
+		
+		return $query;
+	}
+	
 	public function insert_data($data)
 	{
 		$this->db->insert($this->table_name, $data);

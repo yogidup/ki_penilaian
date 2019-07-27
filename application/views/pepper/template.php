@@ -22,6 +22,11 @@
 	<!-- Sweet Alert 2 -->
 	<script src="<?php echo base_url('assets/swal2/');?>sweetalert2.all.min.js"></script>
 	<script src="<?php echo base_url('assets/swal2/');?>promise-polyfill"></script>
+	
+	<!-- Sweet Chart JS -->
+	<script src="<?php echo base_url('assets/chartjs/');?>Chart.bundle.min.js"></script>
+    <link href="<?php echo base_url('assets/chartjs/');?>Chart.min.css" rel="stylesheet">
+	<script src="<?php echo base_url('assets/chartjs/');?>Chart.min.js"></script>
 </head>
 
 <body>
