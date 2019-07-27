@@ -33,12 +33,23 @@ class Pepper extends CI_Controller {
 	
 	public function index()
 	{
+		$condition = array(
+			'report.employe_id' => $this->user['id'],
+		);
+		
+		$option = array(
+			'offset' => 0,
+			'limit' => 2
+		);
+		
+		$part['report_data'] = $this->report_model->chart_select_where($condition)->result_array();
+		$data['main_content'] = $this->load->view('pepper/dashboard', $part, TRUE);
+		
 		$data['page_info'] = array(
 			'site_title' => 'Member Area',
 			'page_title' => '<li><i class="fa fa-home" aria-hidden="true"></i> Home</li>'
 		);
 		$data['user'] = $this->user;
-		$data['main_content'] = $this->load->view('pepper/dashboard', '', TRUE);
 		$this->load->view('pepper/template', $data);
 	}
 }
