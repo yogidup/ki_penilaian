@@ -40,7 +40,7 @@
 										})
 									}
 									</script>
-									<a href="<?php echo base_url('index.php/user/login_as/'.$item['id'])?>"><button onclick="edit_<?php echo $item['id'];?>()"><i class="fa fa-child"></i> Login Sebagai</button></a>
+									<!-- a href="<?php echo base_url('index.php/user/login_as/'.$item['id'])?>"><button onclick="edit_<?php echo $item['id'];?>()"><i class="fa fa-child"></i> Login Sebagai</button></a -->
 								</td>
 							</tr>
 						<?php endforeach;?>
