@@ -1,6 +1,6 @@
 				<div style="font-size: 18px;">
-					<p>RESERVED</p>
-					<canvas id="myChart" width="400" height="100"></canvas>
+					<p>Nilai Evaluasi 6 Bulan Terakhir</p>
+					<canvas id="myChart" width="auto" height="auto"></canvas>
 				</div>
 
 				<script type="text/javascript">
@@ -20,13 +20,13 @@
 					data: {
 						labels: labels,
 						datasets: [{
-							label: 'Nilai Bulanan',
-							backgroundColor: 'rgba(23, 162, 184, 1)',
+							label: 'Total Nilai',
+							backgroundColor: 'rgba(23, 162, 184, 0.5)',
 							borderColor: 'rgba(23, 162, 184, 1)',
 							data: values,
-							borderWidth: 4,
-							pointRadius: 7,
-							fill: false,
+							borderWidth: 1,
+							pointRadius: 2,
+							fill: true,
 						}]
 					}
 				});
